@@ -387,3 +387,4 @@ Read more about the capabilities of [Valgrind](http://valgrind.org/),
 (a suggested [tutorial](http://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Debugging.html#Valgrind)) and how to use it.  
 Think of other situations that this tool may have come in
 handy and try using it for the next bug that you encounter.  
+# module-seven
