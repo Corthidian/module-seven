@@ -25,6 +25,8 @@ void printTable(int **table, int n, int m) {
   }
 }
 
+
+
 int *generateRandomArray(int size) {
   if (size < 0) {
     return NULL;
@@ -119,7 +121,7 @@ int getIndexOfMin(const int *arr, int size) {
 
 int getMax(const int *arr, int size) {
   if (arr == NULL || size <= 0) {
-    return 0; // Return a default value; modify accordingly
+    return 0; 
   }
 
   int max = arr[0];
@@ -134,7 +136,7 @@ int getMax(const int *arr, int size) {
 
 int getIndexOfMax(const int *arr, int size) {
   if (arr == NULL || size <= 0) {
-    return -1; // Return an error value; modify accordingly
+    return -1; 
   }
 
   int max = arr[0];
@@ -152,10 +154,9 @@ int getIndexOfMax(const int *arr, int size) {
 int *filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
   if (arr == NULL || size <= 0 || resultSize == NULL) {
     *resultSize = 0;
-    return NULL; // Return an error value; modify accordingly
+    return NULL; 
   }
 
-  // Count elements greater than or equal to the threshold
   int count = 0;
   for (int i = 0; i < size; i++) {
     if (arr[i] >= threshold) {
@@ -163,14 +164,12 @@ int *filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
     }
   }
 
-  // Allocate memory for the filtered array
   int *filteredArr = (int *)malloc(sizeof(int) * count);
   if (filteredArr == NULL) {
     *resultSize = 0;
-    return NULL; // Memory allocation failed; modify accordingly
+    return NULL; 
   }
 
-  // Copy elements greater than or equal to the threshold
   int index = 0;
   for (int i = 0; i < size; i++) {
     if (arr[i] >= threshold) {
@@ -184,19 +183,19 @@ int *filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
 
 int **createMultiplicationTable(int n, int m) {
   if (n <= 0 || m <= 0) {
-    return NULL; // Return an error value; modify accordingly
+    return NULL; 
   }
 
-  // Allocate memory for the 2D array
+  
   int **table = (int **)malloc(sizeof(int *) * n);
   if (table == NULL) {
-    return NULL; // Memory allocation failed; modify accordingly
+    return NULL; 
   }
 
   for (int i = 0; i < n; i++) {
     table[i] = (int *)malloc(sizeof(int) * m);
     if (table[i] == NULL) {
-      // Memory allocation failed; free allocated memory and return NULL
+      
       for (int j = 0; j < i; j++) {
         free(table[j]);
       }
@@ -204,7 +203,7 @@ int **createMultiplicationTable(int n, int m) {
       return NULL;
     }
 
-    // Fill in the multiplication table values
+    
     for (int j = 0; j < m; j++) {
       table[i][j] = (i + 1) * (j + 1);
     }
