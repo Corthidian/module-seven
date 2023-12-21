@@ -43,16 +43,23 @@ int *generateRandomArray(int size) {
   return randomArr;
 }
 
-int getSum(int *arr, int size) {
-  if (arr == NULL) {
-    return 0;
+int getSum(const int *arr, int size)
+ {
+  
+if (arr == NULL) 
+{
+    
+return 0;
   }
-  int total = 0;
-  for (int i = 0; i < size; i++) {
+  
+int total = 0;
+  
+for (int i = 0; i < size; i++) 
+{
     total += arr[i];
-    arr[i] = 0;
-  }
-  return total;
+}
+  
+return total;
 }
 
 void freeTable(int **table, int n) {
