@@ -25,3 +25,13 @@ void flipHorizontal(Pixel **image, int height, int width) {
         }
     }
 }
+
+void flipVertical(Pixel **image, int height, int width) {
+    for (int i = 0; i < height / 2; i++) {
+        for (int j = 0; j < width; j++) {
+            Pixel temp = image[i][j];
+            image[i][j] = image[height - i - 1][j];
+            image[height - i - 1][j] = temp;
+        }
+    }
+}
