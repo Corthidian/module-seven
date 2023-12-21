@@ -14,3 +14,14 @@ bool contains(const int *arr, int size, int x) {
 
     return false;
 }
+
+bool containsWithin(const int *arr, int size, int x, int i, int j) {
+    for (int index = i; index <= j; index++) {
+        if (arr[index] == x) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
