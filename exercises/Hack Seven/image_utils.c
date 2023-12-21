@@ -35,3 +35,15 @@ void flipVertical(Pixel **image, int height, int width) {
         }
     }
 }
+
+Pixel **rotateClockwise(const Pixel **image, int height, int width) {
+    Pixel **rotated = allocateImage(width, height);
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            rotated[j][height - i - 1] = image[i][j];
+        }
+    }
+
+    return rotated;
+}
