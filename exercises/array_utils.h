@@ -26,10 +26,7 @@ int * generateRandomArray(int size);
  * Sums the elements in the given array.
  */
 int getSum(const int *arr, int size);
-/*
- * Frees the given (n x m) table.  Only the first parameter
- * (n, number of rows) is necessary to free the table.
- */
+
 void freeTable(int **table, int n);
 
 /**
