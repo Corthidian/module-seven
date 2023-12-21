@@ -1,5 +1,8 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+
 
 bool contains(const int *arr, int size, int x) {
     if (arr == NULL || size <= 0) {
@@ -23,5 +26,26 @@ bool containsWithin(const int *arr, int size, int x, int i, int j) {
     }
 
     return false;
+}
+
+int *paddedCopy(const int *arr, int oldSize, int newSize) {
+    int *newArr = (int *)malloc(sizeof(int) * newSize);
+
+    if (newArr == NULL) {
+        return NULL;
+    }
+
+    int minSize = (oldSize < newSize) ? oldSize : newSize;
+    for (int i = 0; i < minSize; i++) {
+        newArr[i] = arr[i];
+    }
+
+    if (newSize > oldSize) {
+        for (int i = oldSize; i < newSize; i++) {
+            newArr[i] = 0;
+        }
+    }
+
+    return newArr;
 }
 
