@@ -1,4 +1,20 @@
 #include "image_utils.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+//a single pixel:
+double Pixel p;
+//an array of n pixels:
+Pixel *p = (Pixel *) malloc(sizeof(Pixel) * n);
+
+//swap two pixels:
+Pixel a, b;
+
+Pixel temp = a;
+a = b;
+b = temp;
+double rotated, copy;
+
 
 Pixel **copyImage(const Pixel **image, int height, int width) {
     Pixel **copy = allocateImage(height, width);
